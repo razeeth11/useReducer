@@ -6,7 +6,7 @@ const initial_value = { count: 0 };
 const reducer = (state, action) => {
   switch (action.type) {
     case "decrement":
-      return { count: state.count - 1 };
+      return { count: state.count > 0 ? state.count - 1 : state.count };
     case "increment":
       return { count: state.count + 1 };
   }
