@@ -6,11 +6,11 @@ const initial_value = { count: 0 , color : ""};
 const reducer = (state, action) => {
   switch (action.type) {
     case "decrement":
-      return { color : state.color , count: state.count > 0 ? state.count - 1 : state.count };
+      return { ...state , count: state.count > 0 ? state.count - 1 : state.count };
     case "increment":
-      return { color : state.color , count: state.count + 1 };
+      return { ...state , count: state.count + 1 };
     case 'reset':
-      return { color : state.color , count: action.payload };
+      return { ...state , count: action.payload };
       case 'update color':
         return { count : state.count , color : state.color = action.payload }
   }
